@@ -1,0 +1,9 @@
+Trebuie sa modelam profilul unui utilizator intr-un magazin online. Ca in orice magazin online, 
+un utilizator are posibilitatea sa modifice mai multe detalii referitoare la profilul sau:
+emailul si/sau numele de utilizator
+parola
+adresele atasate contului
+poate vedea comenzile din contul sau
+poate vedea un wishlist de produse
+poate face returul unui produs cumparat dintr-o anumita comanda
+
