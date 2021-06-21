@@ -10,15 +10,15 @@ public class UserAccount {
     private String password;
     private String address;
     private ArrayList<String> ordersAccount;
-   // private ArrayList<String> wishlistAccount;
+    private ArrayList<String> wishlistAccount;
 
-    public UserAccount(String username, String email, String password, String address, ArrayList<String> ordersAccount/*, ArrayList<String> wishlistAccount*/) {
+    public UserAccount(String username, String email, String password, String address, ArrayList<String> ordersAccount, ArrayList<String> wishlistAccount) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.address = address;
         this.ordersAccount = ordersAccount;
-       // this.wishlistAccount = wishlistAccount;
+        this.wishlistAccount = wishlistAccount;
     }
 
     public String getUsername() {
@@ -61,13 +61,13 @@ public class UserAccount {
         this.ordersAccount = ordersAccount;
     }
 
-//    public ArrayList<String> getWishlistAccount() {
-//        return wishlistAccount;
-//    }
+    public ArrayList<String> getWishlistAccount() {
+        return wishlistAccount;
+    }
 
-//    public void setWishlistAccount(ArrayList<String> wishlistAccount) {
-//        this.wishlistAccount = wishlistAccount;
-//    }
+    public void setWishlistAccount(ArrayList<String> wishlistAccount) {
+        this.wishlistAccount = wishlistAccount;
+    }
 
     @Override
     public String toString() {
@@ -77,7 +77,7 @@ public class UserAccount {
                 ", password='" + password + '\'' +
                 ", address='" + address + '\'' +
                 ", ordersAccount=" + ordersAccount +
-                /*", wishlistAccount=" + wishlistAccount +*/
+                ", wishlistAccount=" + wishlistAccount +
                 '}';
     }
 
@@ -86,11 +86,11 @@ public class UserAccount {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserAccount that = (UserAccount) o;
-        return username.equals(that.username) && email.equals(that.email) && password.equals(that.password) && address.equals(that.address) && ordersAccount.equals(that.ordersAccount); /*&& wishlistAccount.equals(that.wishlistAccount*/
+        return username.equals(that.username) && email.equals(that.email) && password.equals(that.password) && address.equals(that.address) && ordersAccount.equals(that.ordersAccount) && wishlistAccount.equals(that.wishlistAccount);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, email, password, address, ordersAccount/*, wishlistAccount*/);
+        return Objects.hash(username, email, password, address, ordersAccount, wishlistAccount);
     }
 }
