@@ -1,34 +1,64 @@
 package ro.ctrln.java;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
-public interface Orders {
+public class Orders {
 
-     String returned();
+     private int orderNumber;
+     private String orderDescription;
+     private ArrayList<String> products;
 
+     public Orders(int orderNumber, String orderDescription, ArrayList<String> products) {
+          this.orderNumber = orderNumber;
+          this.orderDescription = orderDescription;
+          this.products = products;
+     }
 
+     public int getOrderNumber() {
+          return orderNumber;
+     }
 
-//
-//        System.out.println("The element on the position 0 is: " + orders.get(0));
-//        System.out.println("The element on the position 1 is: " + orders.get(1));
-//        System.out.println("The element on the position 2 is: " + orders.get(2));
-//        System.out.println("The element on the position 3 is: " + orders.get(3));
-//
-//        System.out.println("The size of orders after adding elements is: " + orders.size());
-//
-//        orders.remove(2);
-//
-//        System.out.println("The element on the position 0 is: " + orders.get(0));
-//        System.out.println("The element on the position 1 is: " + orders.get(1));
-//        System.out.println("The element on the position 2 is: " + orders.get(2));
-//        System.out.println("The size of orders after removing the element on the position 2 is: " + orders.size());
-//
-//        orders.remove(0);
-//        System.out.println("The size of orders after returned elements is: " + orders.stream());
-//
-//        for (int index = 0; index < orders.size(); index++) {
-//            System.out.println("The element on the position " + index + " is: " + orders.get(index));
-//        }
+     public void setOrderNumber(int orderNumber) {
+          this.orderNumber = orderNumber;
+     }
 
+     public String getDescription() {
+          return orderDescription;
+     }
 
+     public void setDescription(String description) {
+          this.orderDescription = description;
+     }
+
+     public ArrayList<String> getProducts() {
+          return products;
+     }
+
+     public void setProducts(ArrayList<String> products) {
+          this.products = products;
+     }
+
+     @Override
+     public String toString() {
+          return "Orders{" +
+                  "orderNumber=" + orderNumber +
+                  ", orderDescription=" + orderDescription +
+                  ", products=" + products +
+                  '}';
+     }
+
+     @Override
+     public boolean equals(Object o) {
+          if (this == o) return true;
+          if (o == null || getClass() != o.getClass()) return false;
+          Orders orders = (Orders) o;
+          return orderNumber == orders.orderNumber && orderDescription.equals(orders.orderDescription) && products.equals(orders.products);
+     }
+
+     @Override
+     public int hashCode() {
+          return Objects.hash(orderNumber, orderDescription, products);
+     }
 }
+

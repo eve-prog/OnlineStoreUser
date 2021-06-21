@@ -1,6 +1,5 @@
 package ro.ctrln.java;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 public class UserAccount {
@@ -9,17 +8,24 @@ public class UserAccount {
     private String email;
     private String password;
     private String address;
-    private ArrayList<String> ordersAccount;
-    private ArrayList<String> wishlistAccount;
+    private Orders orders;
+    private Wishlist wishlist;
 
-    public UserAccount(String username, String email, String password, String address, ArrayList<String> ordersAccount, ArrayList<String> wishlistAccount) {
+    public UserAccount(String username, String email, String password, String address) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.address = address;
-        this.ordersAccount = ordersAccount;
-        this.wishlistAccount = wishlistAccount;
     }
+
+//    public UserAccount(String username, String email, String password, String address, Orders orders, Wishlist wishlist) {
+//        this.username = username;
+//        this.email = email;
+//        this.password = password;
+//        this.address = address;
+//        this.orders = orders;
+//        this.wishlist = wishlist;
+//    }
 
     public String getUsername() {
         return username;
@@ -53,20 +59,20 @@ public class UserAccount {
         this.address = address;
     }
 
-    public ArrayList<String> getOrdersAccount() {
-        return ordersAccount;
+    public Orders getOrders() {
+        return orders;
     }
 
-    public void setOrdersAccount(ArrayList<String> ordersAccount) {
-        this.ordersAccount = ordersAccount;
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
 
-    public ArrayList<String> getWishlistAccount() {
-        return wishlistAccount;
+    public Wishlist getWishlist() {
+        return wishlist;
     }
 
-    public void setWishlistAccount(ArrayList<String> wishlistAccount) {
-        this.wishlistAccount = wishlistAccount;
+    public void setWishlist(Wishlist wishlist) {
+        this.wishlist = wishlist;
     }
 
     @Override
@@ -76,8 +82,8 @@ public class UserAccount {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", address='" + address + '\'' +
-                ", ordersAccount=" + ordersAccount +
-                ", wishlistAccount=" + wishlistAccount +
+                /*", orders=" + orders +
+                ", wishlist=" + wishlist +*/
                 '}';
     }
 
@@ -86,11 +92,13 @@ public class UserAccount {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserAccount that = (UserAccount) o;
-        return username.equals(that.username) && email.equals(that.email) && password.equals(that.password) && address.equals(that.address) && ordersAccount.equals(that.ordersAccount) && wishlistAccount.equals(that.wishlistAccount);
+        return username.equals(that.username) && email.equals(that.email) && password.equals(that.password) && address.equals(that.address) /*&& orders.equals(that.orders) && wishlist.equals(that.wishlist)*/;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, email, password, address, ordersAccount, wishlistAccount);
+        return Objects.hash(username, email, password, address/*, orders, wishlist*/);
     }
+
+
 }

@@ -1,30 +1,51 @@
 package ro.ctrln.java;
 
-import java.util.ArrayList;
+import java.util.Objects;
 
-public interface Wishlist {
+public class Wishlist {
 
-     String delete();
+     private int productNumber;
+     private String productName;
 
-//        System.out.println("The element on the position 0 is: " + wishlist.get(0));
-//        System.out.println("The element on the position 1 is: " + wishlist.get(1));
-//        System.out.println("The element on the position 2 is: " + wishlist.get(2));
-//        System.out.println("The element on the position 3 is: " + wishlist.get(3));
-//
-//        System.out.println("The size of wishlist after adding elements is: " + wishlist.size());
-//
-//        wishlist.remove(2);
-//
-//        System.out.println("The element on the position 0 is: " + wishlist.get(0));
-//        System.out.println("The element on the position 1 is: " + wishlist.get(1));
-//        System.out.println("The element on the position 2 is: " + wishlist.get(2));
-//        System.out.println("The size of wishlist after removing the element on the position 2 is: " + wishlist.size());
-//
-//        wishlist.remove(0);
-//        System.out.println("The size of wishlist after returned elements is: " + wishlist.stream());
-//
-//        for (int index = 0; index < wishlist.size(); index++) {
-//            System.out.println("The element on the position " + index + " is: " + wishlist.get(index));
-//        }
+     public Wishlist(int productNumber, String productDescription) {
+          this.productNumber = productNumber;
+          this.productName = productDescription;
+     }
 
+     public int getProductNumber() {
+          return productNumber;
+     }
+
+     public void setProductNumber(int productNumber) {
+          this.productNumber = productNumber;
+     }
+
+     public String getProductDescription() {
+          return productName;
+     }
+
+     public void setProductDescription(String productDescription) {
+          this.productName = productDescription;
+     }
+
+     @Override
+     public String toString() {
+          return "Wishlist{" +
+                  "productNumber=" + productNumber +
+                  ", productName='" + productName + '\'' +
+                  '}';
+     }
+
+     @Override
+     public boolean equals(Object o) {
+          if (this == o) return true;
+          if (o == null || getClass() != o.getClass()) return false;
+          Wishlist wishlist = (Wishlist) o;
+          return productNumber == wishlist.productNumber && productName.equals(wishlist.productName);
+     }
+
+     @Override
+     public int hashCode() {
+          return Objects.hash(productNumber, productName);
+     }
 }
