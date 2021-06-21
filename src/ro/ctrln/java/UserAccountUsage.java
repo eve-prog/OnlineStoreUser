@@ -42,15 +42,14 @@ public class UserAccountUsage {
         System.out.println("The product on the position 1 from Order1 is: " + productsOrder1.get(0));
         System.out.println("The product on the position 2 from Order1 is: " + productsOrder1.get(1));
 
-        for (int index = 0; index < orders.size(); index++) {
-            System.out.println("The order from position " + index + " is: " + orders.get(index));
-        }
-
         System.out.println("The returned product from Order1 is: " + productsOrder1.get(0));
         productsOrder1.remove("tv");
         System.out.println("The size of Order1 after returning a product: " + productsOrder1.size());
         System.out.println("The products remained from Order1 after returning a product is: " + productsOrder1);
 
+        for (int index = 0; index < orders.size(); index++) {
+            System.out.println("The order from position " + index + " is: " + orders.get(index));
+        }
 
         System.out.println("The product on the position 0 is: " + wishlist.get(0));
         System.out.println("The product on the position 1 is: " + wishlist.get(1));
