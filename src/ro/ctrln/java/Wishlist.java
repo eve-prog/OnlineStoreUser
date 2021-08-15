@@ -1,38 +1,38 @@
 package ro.ctrln.java;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Wishlist {
+     private int productUnit;
+     private ArrayList<Product> wishlistProducts;
 
-     private int productNumber;
-     private String productName;
-
-     public Wishlist(int productNumber, String productDescription) {
-          this.productNumber = productNumber;
-          this.productName = productDescription;
+     public Wishlist(int productUnit, ArrayList<Product> wishlistProducts) {
+          this.productUnit = productUnit;
+          this.wishlistProducts = wishlistProducts;
      }
 
-     public int getProductNumber() {
-          return productNumber;
+     public int getProductUnit() {
+          return productUnit;
      }
 
-     public void setProductNumber(int productNumber) {
-          this.productNumber = productNumber;
+     public void setProductUnit(int productUnit) {
+          this.productUnit = productUnit;
      }
 
-     public String getProductDescription() {
-          return productName;
+     public ArrayList<Product> getWishlistProducts() {
+          return wishlistProducts;
      }
 
-     public void setProductDescription(String productDescription) {
-          this.productName = productDescription;
+     public void setWishlistProducts(ArrayList<Product> wishlistProducts) {
+          this.wishlistProducts = wishlistProducts;
      }
 
      @Override
      public String toString() {
           return "Wishlist{" +
-                  "productNumber=" + productNumber +
-                  ", productName='" + productName + '\'' +
+                  "productUnit=" + productUnit +
+                  ", wishlistProducts=" + wishlistProducts +
                   '}';
      }
 
@@ -41,11 +41,11 @@ public class Wishlist {
           if (this == o) return true;
           if (o == null || getClass() != o.getClass()) return false;
           Wishlist wishlist = (Wishlist) o;
-          return productNumber == wishlist.productNumber && productName.equals(wishlist.productName);
+          return productUnit == wishlist.productUnit && wishlistProducts.equals(wishlist.wishlistProducts);
      }
 
      @Override
      public int hashCode() {
-          return Objects.hash(productNumber, productName);
+          return Objects.hash(productUnit, wishlistProducts);
      }
 }
