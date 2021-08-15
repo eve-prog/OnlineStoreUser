@@ -18,7 +18,7 @@ public class UserAccountUsage {
         ArrayList<Product> products1 = new ArrayList<>();
         products1.add(new Product(1, "tv", 22.9));
         products1.add(new Product(2, "phone", 10.2));
-        System.out.println("The products are: " + products1);
+       // System.out.println("The products are: " + products1);
 
         ArrayList<Order> orders = new ArrayList<>();
         orders.add(new Order(1, ("Order1"), products1));
@@ -50,9 +50,8 @@ public class UserAccountUsage {
         System.out.println("The product on the position 2 from Order1 is: " + products1.get(1));
 
         System.out.println("The size of Order2 is: " + products2.size());
-        System.out.println("The product on the position 1 from Order2 is: " + products1.get(0));
-        System.out.println("The product on the position 2 from Order2 is: " + products1.get(1));
-
+        System.out.println("The product on the position 1 from Order2 is: " + products2.get(0));
+        System.out.println("The product on the position 2 from Order2 is: " + products2.get(1));
 
         System.out.println("The returned product from Order1 is: " + products1.get(0));
         products1.remove(new Product(1, "tv", 22.9));
